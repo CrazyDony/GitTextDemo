@@ -15,6 +15,7 @@
 		18BD71B61E0A5A8F00F82411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BD71B41E0A5A8F00F82411 /* LaunchScreen.storyboard */; };
 		18BD71C11E0A5A8F00F82411 /* GitTextDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BD71C01E0A5A8F00F82411 /* GitTextDemoTests.m */; };
 		18BD71CC1E0A5A8F00F82411 /* GitTextDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BD71CB1E0A5A8F00F82411 /* GitTextDemoUITests.m */; };
+		8607C2FB22F46016003AAAB0 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607C2FA22F46016003AAAB0 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		18BD71C71E0A5A8F00F82411 /* GitTextDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitTextDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD71CB1E0A5A8F00F82411 /* GitTextDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitTextDemoUITests.m; sourceTree = "<group>"; };
 		18BD71CD1E0A5A8F00F82411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8607C2F722F45FDE003AAAB0 /* GitTextDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitTextDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		8607C2FA22F46016003AAAB0 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +108,13 @@
 				18BD71AA1E0A5A8F00F82411 /* AppDelegate.m */,
 				18BD71AC1E0A5A8F00F82411 /* ViewController.h */,
 				18BD71AD1E0A5A8F00F82411 /* ViewController.m */,
+				8607C2FA22F46016003AAAB0 /* DemoViewController.swift */,
 				18BD71AF1E0A5A8F00F82411 /* Main.storyboard */,
 				18BD71B21E0A5A8F00F82411 /* Assets.xcassets */,
 				18BD71B41E0A5A8F00F82411 /* LaunchScreen.storyboard */,
 				18BD71B71E0A5A8F00F82411 /* Info.plist */,
 				18BD71A61E0A5A8F00F82411 /* Supporting Files */,
+				8607C2F722F45FDE003AAAB0 /* GitTextDemo-Bridging-Header.h */,
 			);
 			path = GitTextDemo;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				TargetAttributes = {
 					18BD71A21E0A5A8F00F82411 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 1030;
 					};
 					18BD71BB1E0A5A8F00F82411 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -223,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -273,6 +280,7 @@
 				18BD71AE1E0A5A8F00F82411 /* ViewController.m in Sources */,
 				18BD71AB1E0A5A8F00F82411 /* AppDelegate.m in Sources */,
 				18BD71A81E0A5A8F00F82411 /* main.m in Sources */,
+				8607C2FB22F46016003AAAB0 /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +356,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -392,6 +401,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -413,10 +423,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = GitTextDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tcrj.GitTextDemo;
+				PRODUCT_MODULE_NAME = GitTextDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitTextDemo/GitTextDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -424,16 +440,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = GitTextDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tcrj.GitTextDemo;
+				PRODUCT_MODULE_NAME = GitTextDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitTextDemo/GitTextDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		18BD71D41E0A5A8F00F82411 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GitTextDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -446,6 +468,7 @@
 		18BD71D51E0A5A8F00F82411 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GitTextDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -458,6 +481,7 @@
 		18BD71D71E0A5A8F00F82411 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = GitTextDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tcrj.GitTextDemoUITests;
@@ -469,6 +493,7 @@
 		18BD71D81E0A5A8F00F82411 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = GitTextDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tcrj.GitTextDemoUITests;
@@ -496,6 +521,7 @@
 				18BD71D21E0A5A8F00F82411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BD71D31E0A5A8F00F82411 /* Build configuration list for PBXNativeTarget "GitTextDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +530,7 @@
 				18BD71D51E0A5A8F00F82411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BD71D61E0A5A8F00F82411 /* Build configuration list for PBXNativeTarget "GitTextDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +539,7 @@
 				18BD71D81E0A5A8F00F82411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
