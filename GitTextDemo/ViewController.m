@@ -18,7 +18,6 @@
     
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"test1.0.1");
-    NSLog(@"develope1.0.1");
 
 }
 
